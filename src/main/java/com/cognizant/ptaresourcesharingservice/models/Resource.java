@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Resource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String author;
     private String title;
     private String content;
@@ -31,11 +31,11 @@ public class Resource {
         this.commentIdList = commentIdList;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -76,7 +76,7 @@ public class Resource {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Resource resource = (Resource) o;
-        return id == resource.id && Objects.equals(author, resource.author) && Objects.equals(title, resource.title) && Objects.equals(content, resource.content) && Objects.equals(commentIdList, resource.commentIdList);
+        return Objects.equals(id, resource.id) && Objects.equals(author, resource.author) && Objects.equals(title, resource.title) && Objects.equals(content, resource.content) && Objects.equals(commentIdList, resource.commentIdList);
     }
 
     @Override
