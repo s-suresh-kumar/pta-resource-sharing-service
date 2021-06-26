@@ -33,8 +33,8 @@ public class ResourceController {
         return resourceRepo.getById(id);
     }
 
-    @PutMapping
-    @ResponseStatus(HttpStatus.OK)
+    @PutMapping(value="/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void editResources(@RequestBody Resource resource, @PathVariable Integer id){
         if (resource.getId() == null) {
             resource.setId(id);
@@ -45,8 +45,10 @@ public class ResourceController {
         resourceRepo.save(resource);
     }
 
-
-
-
+    @DeleteMapping(value="{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteResource(@PathVariable Integer id) {
+        resourceRepo.deleteById(id);
+    }
 
 }
