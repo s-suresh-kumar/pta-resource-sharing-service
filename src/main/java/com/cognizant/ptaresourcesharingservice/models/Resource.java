@@ -17,8 +17,6 @@ public class Resource {
     private String author;
     private String title;
     private String content;
-   // private List<Integer> commentIdList;
-
 
     public Resource() {
     }

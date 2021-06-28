@@ -21,10 +21,14 @@ public class ResourceController {
     public Resource createResource(@RequestBody Resource resource){
         return resourceRepo.save(resource);
     }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Resource> getAllResources(){
-        return resourceRepo.findAll();
+        List<Resource> reso=resourceRepo.findAll();
+        System.out.println(reso);
+
+        return reso;
     }
 
     @GetMapping(value="/{id}")
